@@ -5,7 +5,12 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mic, MicOff, Search, Sparkles } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-
+declare global {
+  interface Window {
+    SpeechRecognition: any;
+    webkitSpeechRecognition: any;
+  }
+}
 export function VoiceSearch() {
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
