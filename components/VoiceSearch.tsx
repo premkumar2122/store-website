@@ -29,7 +29,7 @@ export function VoiceSearch() {
         setIsListening(true);
       };
 
-      recognitionInstance.onresult = (event) => {
+      recognitionInstance.onresult = (event: any) => {
         const currentTranscript = event.results[0][0].transcript;
         setTranscript(currentTranscript);
       };
