@@ -28,6 +28,7 @@ export function VoiceSearch() {
       recognitionInstance.onstart = () => {
         setIsListening(true);
       };
+      
 
       recognitionInstance.onerror = (event: any) => {
         console.error('Speech recognition error:', event.error);
