@@ -29,10 +29,10 @@ export function VoiceSearch() {
         setIsListening(true);
       };
 
-      recognitionInstance.onresult = (event: any) => {
-        const currentTranscript = event.results[0][0].transcript;
-        setTranscript(currentTranscript);
-      };
+      recognitionInstance.onerror = (event: any) => {
+        console.error('Speech recognition error:', event.error);
+        setIsListening(false);
+        };
 
       recognitionInstance.onend = () => {
         setIsListening(false);
