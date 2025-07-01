@@ -1,3 +1,4 @@
+type SpeechRecognition = any;
 'use client';
 
 import { useState, useEffect } from 'react';
